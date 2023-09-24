@@ -1,0 +1,31 @@
+function demo(input){
+    let cap = Number(input[0]);
+    let i = 1;
+    let group = 0;
+    let people = 0;
+    let price = 0;
+    let total = 0;
+    let full = false;
+    while(input[i] != "Movie time!"){
+        group = Number(input[i]);
+        if((group + people) > cap){
+            console.log(`The cinema is full.`);
+            console.log(`Cinema income - ${total} lv.`);
+            full = true;
+            break;
+        }
+        else{
+            if(group % 3 == 0){
+                price = group * 5 - 5; 
+            }
+            else{price = group * 5;}
+            total += price;
+            people += group;
+        }
+        i++;
+    }
+    if(full == false){
+        console.log(`There are ${cap - people} seats left in the cinema.`);
+        console.log(`Cinema income - ${total} lv.`);
+    }
+}
