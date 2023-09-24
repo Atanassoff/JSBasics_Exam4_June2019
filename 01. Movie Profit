@@ -1,0 +1,11 @@
+function demo(input){
+    let film = input[0];
+    let days = Number(input[1]);
+    let tickets = Number(input[2]);
+    let price = Number(input[3]);
+    let percent = Number(input[4]);
+    let allMoney = days * tickets * price; 
+    let forCinema = percent * allMoney / 100;
+    let profit = allMoney - forCinema;
+    console.log(`The profit from the movie ${film} is ${profit.toFixed(2)} lv.`);
+}
