@@ -1,0 +1,25 @@
+function demo(input){
+    let budget = Number(input[0]);
+    let name = "";
+    let salary = 0;
+    let i = 1;
+    while((name = input[i]) != "ACTION"){
+        if(name.length > 15){
+            salary = Number(budget) * 0.2;
+            i++;
+        }
+        else{
+            salary = Number(input[i + 1]);
+            i += 2;
+        }
+        budget -= salary;
+        if(budget < 0){break;}
+    }
+    let diff = Math.abs(budget);
+    if(budget >= 0){
+        console.log(`We are left with ${diff.toFixed(2)} leva.`);
+    }
+    else{
+        console.log(`We need ${diff.toFixed(2)} leva for our actors.`);
+    }
+}
