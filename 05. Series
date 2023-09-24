@@ -1,0 +1,19 @@
+function demo(input){
+    let budget = Number(input[0]);
+    let num = Number(input[1]);
+    let film = "";
+    total = 0;
+    for(i = 2; i <= (num * 2 + 1); i += 2){
+        film = input[i];
+        budg = Number(input[i + 1]);
+        if(film == "Thrones"){budg *= 0.5;}
+        else if(film == "Lucifer"){budg *= 0.6;}
+        else if(film == "Protector"){budg *= 0.7;}
+        else if(film == "TotalDrama"){budg *= 0.8;}
+        else if(film == "Area"){budg *= 0.9;}
+        total += budg;
+    }
+    let diff = Math.abs(budget - total);
+    if(budget >= total){console.log(`You bought all the series and left with ${diff.toFixed(2)} lv.`);}
+    else{console.log(`You need ${diff.toFixed(2)} lv. more to buy the series!`);}
+}
