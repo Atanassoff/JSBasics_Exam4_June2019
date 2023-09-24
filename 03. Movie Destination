@@ -1,0 +1,30 @@
+function demo(input){
+    let budget = Number(input[0]);
+    let country = input[1];
+    let season = input[2];
+    let days = Number(input[3]);
+    let price = 0;
+    switch(country){
+        case"Dubai":
+        if(season == "Winter"){price = days * 45000;}
+        else if(season == "Summer"){price = days * 40000;}
+        price *= 0.7;
+        break;
+        case"Sofia":
+        if(season == "Winter"){price = days * 17000;}
+        else if(season == "Summer"){price = days * 12500;}
+        price *= 1.25;
+        break;
+        case"London":
+        if(season == "Winter"){price = days * 24000;}
+        else if(season == "Summer"){price = days * 20250;}
+        break;
+        default:
+        break;
+    }
+    let diff = Math.abs(budget - price).toFixed(2);
+    if(budget >= price){
+        console.log(`The budget for the movie is enough! We have ${diff} leva left!`);
+    }
+    else{console.log(`The director needs ${diff} leva more!`);}
+}
