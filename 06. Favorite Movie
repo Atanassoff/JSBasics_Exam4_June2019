@@ -1,0 +1,33 @@
+function demo(input){
+    let film = "";
+    let sum = 0;
+    let max = 0;
+    let maxFilm = "";
+    let score = 0;
+    let reached = false;
+    for(i = 0; i < 7; i++){ 
+        film = input[i];
+        if(film == "STOP"){break;}
+        for(j = 0; j < film.length; j++){
+            if(film.charCodeAt(j) >= 65 && film.charCodeAt(j) <= 90){
+                score = film.charCodeAt(j) - film.length;
+            }
+            else if(film.charCodeAt(j) >= 97 && film.charCodeAt(j) <= 122){
+                score = film.charCodeAt(j) - (film.length * 2);
+            }
+            else{score = film.charCodeAt(j);}
+            sum += score; 
+            //console.log(film + " " + film[j] + " " + film.charCodeAt(j) + " " + score + " " + sum);
+        }
+        if(sum > max){max = sum; maxFilm = film;}
+        sum = 0;
+        if(i == 6){
+            reached = true;
+            console.log(`The limit is reached.`);
+            console.log(`The best movie for you is ${maxFilm} with ${max} ASCII sum.`);
+        }
+    }
+    if(reached == false){
+    console.log(`The best movie for you is ${maxFilm} with ${max} ASCII sum.`)
+    }
+}
