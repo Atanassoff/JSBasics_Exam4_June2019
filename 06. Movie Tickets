@@ -1,0 +1,14 @@
+function demo(input){
+    let a1 = Number(input[0]); let a2 = Number(input[1]); let n = Number(input[2]); let s4 = 0;
+    let symb1 = "";
+    for(s1 = a1; s1 < a2; s1++){
+        for(s2 = 1; s2 < n; s2++){
+            for(s3 = 1; s3 <= (n/2 - 1); s3++){
+                symb1 = String.fromCharCode(s1); 
+                if(s1 % 2 == 1 && (s2 + s3 + s1) % 2 == 1){
+                console.log(`${symb1}-${s2}${s3}${symb1.charCodeAt(0)}`);
+                }
+            }
+        }
+    }
+}
