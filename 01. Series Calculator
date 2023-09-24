@@ -1,0 +1,11 @@
+function demo(input){
+    let film = input[0];
+    let seasons = Number(input[1]);
+    let series = Number(input[2]);
+    let oneSeryMinutes = Number(input[3]);
+    let seryWithAds = oneSeryMinutes * 1.2;
+    let allSeries = seryWithAds * series * seasons;
+    let last10Min = seasons * 10;
+    let totalMinutes = allSeries + last10Min;
+    console.log(`Total time needed to watch the ${film} series is ${totalMinutes} minutes.`)
+}
