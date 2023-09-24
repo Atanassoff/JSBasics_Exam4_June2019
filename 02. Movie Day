@@ -1,0 +1,13 @@
+function demo(input){
+    let time = Number(input[0]);
+    let preparation = time * 0.15;
+    let scenes = Number(input[1]); let sceneMinutes = Number(input[2]);
+    let workMinutes = scenes * sceneMinutes + preparation;
+    let diff = Math.abs(time - workMinutes);
+    if(time >= workMinutes){
+        console.log(`You managed to finish the movie on time! You have ${Math.round(diff)} minutes left!`);
+    }
+    else{
+        console.log(`Time is up! To complete the movie you need ${Math.round(diff)} minutes.`);
+    }  
+}
