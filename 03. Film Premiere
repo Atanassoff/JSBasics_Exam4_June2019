@@ -1,0 +1,28 @@
+function demo(input){
+    let film = input[0];
+    let package = input[1];
+    let num = Number(input[2]);
+    let price = 0;
+    switch(film){
+        case"John Wick":
+        if(package == "Drink"){price = 12 * num;}
+        else if(package == "Popcorn"){price = 15 * num;}
+        else if(package == "Menu"){price = 19 * num;}
+        break;
+        case"Star Wars":
+        if(package == "Drink"){price = 18 * num;}
+        else if(package == "Popcorn"){price = 25 * num;}
+        else if(package == "Menu"){price = 30 * num;}
+        if(num >= 4){price *= 0.7;}
+        break;
+        case"Jumanji":
+        if(package == "Drink"){price = 9 * num;}
+        else if(package == "Popcorn"){price = 11 * num;}
+        else if(package == "Menu"){price = 14 * num;}
+        if(num == 2){price *= 0.85;}
+        break;
+        default:
+        break;
+    }
+    console.log(`Your bill is ${price.toFixed(2)} leva.`)
+}
