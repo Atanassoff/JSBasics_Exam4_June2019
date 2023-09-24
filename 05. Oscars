@@ -1,0 +1,17 @@
+function demo(input){
+    let actor = input[0];
+    let total = Number(input[1]);
+    let num = Number(input[2]);
+    let jury = ""; let juryScore = ""; let juryTotalSc = "";
+    for(i = 3; i <= (num * 2 + 2); i +=2){
+        jury = input[i]; juryScore = Number(input[i + 1]); 
+        juryTotalSc = jury.length * juryScore / 2; 
+        total += juryTotalSc;
+        if(total >= 1250.5){
+            break;
+        }
+    }
+    if(total >= 1250.50){
+        console.log(`Congratulations, ${actor} got a nominee for leading role with ${total.toFixed(1)}!`);}
+    else{console.log(`Sorry, ${actor} you need ${(1250.5 - total).toFixed(1)} more!`);}
+}
